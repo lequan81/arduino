@@ -106,7 +106,7 @@ byte char4[8] = {
 //=================================================//
 void setup()  {
   Wire.begin(D1, D2);      // set I2C pins [SDA = D1, SCL = D2]
-  lcd.begin();
+  lcd.init();
   lcd.backlight();
   lcd.clear();
   pinMode(buzzer, OUTPUT); // Set buzzer as an output
@@ -516,4 +516,11 @@ int convertSolar2Lunar(int dd, int mm, int yy) {
     lcd.print("/");
     lcd.print(int(lunarYear));
   */
+  Serial.print("\n");
+  Serial.print(int(lunarDay));
+  Serial.print("/");
+  Serial.print(int(lunarMonth));
+  Serial.print("");
+  Serial.print("/");
+  Serial.print(int(lunarYear));
 }
